@@ -1,0 +1,205 @@
+#grid
+{    
+    background: #1b1b1b;
+    width: 520px;
+    height: 600px;
+    margin: auto;
+    display: none;
+}
+
+#grid.p1
+{
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+}
+
+#grid.p1 .cell
+{
+    border-left: 1px solid red;
+    border-top: 1px solid red;
+}
+
+#grid.p2
+{
+    border-right: 1px solid yellow;
+    border-bottom: 1px solid yellow;
+}
+
+#grid.p2 .cell
+{
+    border-left: 1px solid yellow;
+    border-top: 1px solid yellow;
+}
+
+#grid.p3
+{
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+}
+
+#grid.p3 .cell
+{
+    border-left: 1px solid blue;
+    border-top: 1px solid blue;
+}
+
+#grid.p4
+{
+    border-right: 1px solid green;
+    border-bottom: 1px solid green;
+}
+
+#grid.p4 .cell
+{
+    border-left: 1px solid green;
+    border-top: 1px solid green;
+}
+
+#grid > div
+{
+    width: 100%;
+    height: 25px;
+    float: left;
+}
+
+#grid .cell
+{
+    border-left: 1px solid red;
+    border-top: 1px solid red;
+    float: left;
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
+#grid .cell > span
+{
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    border-radius: 3px;
+    border: 1px solid;
+    background: black;
+    display: none; 
+}
+
+#grid .cell > span.left,
+#grid .cell > span.right,
+#grid .cell > span.up,
+#grid .cell > span.down
+{
+    top: 9px;
+    left: 9px;
+}
+
+#grid .cell.one > span:nth-child(1)
+{
+    top: 9px;
+    left: 9px;
+    display: block;
+}
+
+#grid .cell.one > span:not(:nth-child(1)),
+#grid .cell.two > span:nth-child(3)
+{
+    display: none;
+}
+
+#grid .cell.two > span:nth-child(1)
+{
+    top: 5px;
+    left: 5px;
+    animation-name: double-span1;
+    animation-duration: 5s ;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    display: block;
+}
+
+#grid .cell.two > span:nth-child(2)
+{
+    top: 12px;
+    left: 12px;
+    animation-name: double-span2;
+    animation-duration: 5s ;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    display: block;
+}
+
+#grid .cell.three > span:nth-child(1)
+{
+    top: 2px;
+    left: 16px;
+    animation-name: triple-span1;
+    animation-duration: .5s ;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    display: block;
+}
+
+#grid .cell.three > span:nth-child(2)
+{
+    top: 9px;
+    left: 9px;
+    display: block;
+}
+
+#grid .cell.three > span:nth-child(3)
+{
+    top: 16px;
+    left: 2px;
+    animation-name: triple-span2;
+    animation-duration: .5s ;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    display: block;
+}
+
+#grid .cell.p1 > span
+{
+    border: 1px solid red;
+    background: red;
+}
+
+#grid .cell.p2 > span
+{
+    border: 1px solid yellow;
+    background: yellow;
+}
+
+#grid .cell.p3 > span
+{
+    border: 1px solid blue;
+    background: blue;
+}
+
+#grid .cell.p4 > span
+{
+    border: 1px solid green;
+    background: green;
+}
+
+@keyframes double-span1
+{
+    from {left: 5px;}
+    to {left: 12px;}
+}
+
+@keyframes double-span2
+{
+    from {left: 12px;}
+    to {left: 5px;}
+}
+
+@keyframes triple-span1
+{
+    from {top: 2px;}
+    to {top: 16px;}
+}
+
+@keyframes triple-span2
+{
+    from {top: 16px;}
+    to {top: 2px;}
+}
